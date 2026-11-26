@@ -1,0 +1,75 @@
+body {
+    transition: background-color 0.4s ease, color 0.3s ease;
+    overflow-x: hidden;
+}
+
+html:not(.dark) body {
+    background: linear-gradient(180deg, #e0f7fa 0%, #f0f9ff 45%, #e6fffa 100%);
+}
+
+html.dark body {
+    background: radial-gradient(circle at 50% 0%, #132f57 0%, #091930 55%, #050d1a 100%);
+}
+
+@keyframes duduFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-7px) rotate(2deg); }
+}
+.animate-dudu-float {
+    animation: duduFloat 3.2s ease-in-out infinite;
+}
+
+@keyframes duduJump {
+    0% { transform: translateY(0) scale(1, 1); }
+    25% { transform: translateY(4px) scale(1.12, 0.88); }
+    55% { transform: translateY(-22px) rotate(-8deg) scale(0.95, 1.08); }
+    80% { transform: translateY(2px) scale(1.04, 0.96); }
+    100% { transform: translateY(0) scale(1, 1); }
+}
+.animate-dudu-jump {
+    animation: duduJump 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes bubbleRise {
+    0% { transform: translateY(100vh) scale(0.6); opacity: 0; }
+    20% { opacity: 0.55; }
+    80% { opacity: 0.4; }
+    100% { transform: translateY(-10vh) scale(1.15); opacity: 0; }
+}
+.bg-bubble {
+    position: fixed;
+    bottom: -40px;
+    border-radius: 9999px;
+    pointer-events: none;
+    z-index: 0;
+    animation: bubbleRise linear infinite;
+}
+
+@keyframes particlePop {
+    0% { transform: translate(0, 0) scale(0.5); opacity: 1; }
+    100% { transform: translate(var(--tx), var(--ty)) scale(1.25); opacity: 0; }
+}
+.splash-particle {
+    position: absolute;
+    pointer-events: none;
+    animation: particlePop 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    z-index: 40;
+}
+
+@keyframes waveSway {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-18px); }
+}
+.animate-wave {
+    animation: waveSway 6s ease-in-out infinite;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.candy-press:active {
+    transform: translateY(3px);
+}
