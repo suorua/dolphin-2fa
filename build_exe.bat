@@ -15,13 +15,22 @@ if %errorlevel% neq 0 (
 
 for /f "tokens=*" %%i in ('go version') do echo [环境] %%i
 
+set GOPROXY=https://goproxy.cn,direct
 set CGO_ENABLED=0
 set GOOS=windows
 set GOARCH=amd64
 
 if not exist dist mkdir dist
 
-echo [构建] 零外部依赖，正在直接编译单文件 Windows EXE...
+echo [1/2] 正在检查依赖...
+go mod tidy
+if %errorlevel% neq 0 (
+    echo [错误] 依赖下载失败，请检查网络。
+    pause
+    exit /b 1
+)
+
+echo [2/2] 正在编译单文件 Windows EXE...
 go build -trimpath -ldflags="-s -w" -o dist\dolphin-2fa.exe .
 if %errorlevel% neq 0 (
     echo [错误] 编译失败，请查看上方日志。
