@@ -8,7 +8,14 @@
 
 2. **AES-256-GCM 数据库信封加密**：`tokens` 表中所有 2FA 密钥落盘全密文，登录后导出备份为明文 JSON。
 
-   
+
+![https://github.com/suorua/dolphin-2fa/blob/main/20261127153725.png](https://github.com/suorua/dolphin-2fa/blob/main/20261127153747.png)
+
+![https://github.com/suorua/dolphin-2fa/blob/main/20261127153747.png](https://github.com/suorua/dolphin-2fa/blob/main/20261127153725.png)
+
+![https://github.com/suorua/dolphin-2fa/blob/main/20261127153821.png](https://github.com/suorua/dolphin-2fa/blob/main/20261127153821.png)
+
+![https://github.com/suorua/dolphin-2fa/blob/main/20261127153841.png](https://github.com/suorua/dolphin-2fa/blob/main/20261127153841.png)
 
 ## 推荐Docker部署
 
